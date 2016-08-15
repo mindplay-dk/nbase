@@ -1,0 +1,22 @@
+{
+    "name": "mindplay/nbase",
+    "license": "MIT",
+    "description": "Convert numbers between arbitrary notations",
+    "authors": [
+        {
+            "name": "Rasmus Schultz",
+            "email": "rasmus@mindplay.dk"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "mindplay/testies": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "mindplay\\nbase\\": "src/"
+        }
+    }
+}

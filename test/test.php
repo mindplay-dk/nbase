@@ -15,7 +15,11 @@ test(
         eq($converter->convert('012345', 'dec', 'hex'), '3039', "ignore leading zeroes");
         eq($converter->convert('03039', 'hex', 'dec'), '12345', "ignore leading zeroes");
 
-        eq($converter->convert(12345, 'dec', 'hex'), '3039', 'accepts integer input values');
+        foreach (array_keys($converter->notations) as $notation) {
+            foreach ([0, 1, 8, PHP_INT_MAX] as $value) {
+                eq((int) $converter->convert($converter->convert($value, 'dec', $notation), $notation, 'dec'), $value);
+            }
+        }
     }
 );
 
